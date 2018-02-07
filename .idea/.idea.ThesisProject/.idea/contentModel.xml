@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\jonas\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_ThesisProject.-1102472077.00" t="ExcludeRecursive" />
+    <e p="C:\Users\jonas\Documents\Unity\ThesisProject" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="FollowCamera.cs" t="Include" />
+          <e p="Roll.cs" t="Include" />
+        </e>
+        <e p="Standard Assets" t="Include">
+          <e p="Prototyping" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="WorldCoordDiffuse.shader" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+      <e p="ThesisProject.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
