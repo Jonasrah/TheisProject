@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4e8650e0ee383314f88f39307fb7db84
-timeCreated: 1518031034
+guid: aca0944dfc8ce6943ac12d5779eab610
+timeCreated: 1518030493
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Wheel
+    4300000: Cylinder
   externalObjects: {}
   materials:
     importMaterials: 1

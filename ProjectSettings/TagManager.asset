@@ -13,6 +13,7 @@ TagManager:
   - UI
   - 
   - 
+  - Wheel
   - 
   - 
   - 
@@ -24,6 +25,7 @@ TagManager:
   - 
   - 
   - 
+  - Camera
   - 
   - 
   - 
@@ -34,9 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Ground
   m_SortingLayers:
   - name: Default
     uniqueID: 0
