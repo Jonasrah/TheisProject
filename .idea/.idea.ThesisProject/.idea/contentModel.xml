@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\jonas\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_ThesisProject.505520256.00" t="ExcludeRecursive" />
+    <e p="C:\Users\jonas\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_ThesisProject.505520256.00" t="ExcludeRecursive" />
     <e p="C:\Users\jonas\Documents\Speciale\ThesisProject" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -18,6 +18,13 @@
           <e p="Forward.cs" t="Include" />
           <e p="Roll.cs" t="Include" />
           <e p="RotateToCamera.cs" t="Include" />
+        </e>
+        <e p="Standard Assets" t="Include">
+          <e p="Prototyping" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="WorldCoordDiffuse.shader" t="Include" />
+            </e>
+          </e>
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />

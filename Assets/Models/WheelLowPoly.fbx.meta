@@ -1,26 +1,31 @@
 fileFormatVersion: 2
-guid: 4e8650e0ee383314f88f39307fb7db84
-timeCreated: 1518031034
+guid: 56fdc991d7e59294491fce56b2c44b14
+timeCreated: 1518093146
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
-    2100002: OuterWheel
-    2100004: InnerWheel
-    2100006: MiddleWheel
     2300000: //RootNode
     3300000: //RootNode
     4300000: Wheel
-    4300002: WheelHighPoly
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: InnerWheel
+    second: {fileID: 2100000, guid: b87b03e398612a84fa77ea31668a6a07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OuterWheel
+    second: {fileID: 2100000, guid: b247f88a8f59f0242bf3d1018ec82add, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

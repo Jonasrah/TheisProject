@@ -22,7 +22,6 @@ public class Roll : MonoBehaviour
 	private void FixedUpdate()
 	{
 
-
 		float scroll = scrollDelta * rollSpeed;
 		
 		if (Mathf.Abs(scroll) > 0f)
@@ -33,9 +32,10 @@ public class Roll : MonoBehaviour
 		}
 		else
 		{
-			wheelRigidbody.angularVelocity = Vector3.Lerp(wheelRigidbody.angularVelocity, Vector3.zero, Time.fixedDeltaTime * 30);
+			wheelRigidbody.angularVelocity = Vector3.Lerp(
+									wheelRigidbody.angularVelocity, Vector3.zero, Time.fixedDeltaTime * 50);
 		}
-		wheelRigidbody.angularVelocity = transform.right * wheelRigidbody.angularVelocity.magnitude; // add backwards
+		wheelRigidbody.angularVelocity = Vector3.Project(wheelRigidbody.angularVelocity, transform.right); // add backwards
 
 	}
 
