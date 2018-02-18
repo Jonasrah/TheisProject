@@ -15,9 +15,11 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="FollowCamera.cs" t="Include" />
-          <e p="Forward.cs" t="Include" />
           <e p="Roll.cs" t="Include" />
+<<<<<<< HEAD
           <e p="RotateToCamera.cs" t="Include" />
+=======
+>>>>>>> d2a8cce840341d7e3bd53e46e3b1fa6738f9f262
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
