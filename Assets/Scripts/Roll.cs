@@ -28,6 +28,8 @@ public class Roll : MonoBehaviour
 		{
 			
 			wheelRigidbody.AddTorque(transform.right * scroll, ForceMode.VelocityChange);
+			Vector3 targVel = Vector3.Cross(transform.right, Vector3.up) * wheelRigidbody.velocity.magnitude;
+			wheelRigidbody.velocity = Vector3.Lerp(wheelRigidbody.velocity, targVel, Time.fixedDeltaTime * 10);
 			scrollDelta = 0;
 		}
 		else
@@ -35,7 +37,10 @@ public class Roll : MonoBehaviour
 			wheelRigidbody.angularVelocity = Vector3.Lerp(
 									wheelRigidbody.angularVelocity, Vector3.zero, Time.fixedDeltaTime * 50);
 		}
-		wheelRigidbody.angularVelocity = Vector3.Project(wheelRigidbody.angularVelocity, transform.right); // add backwards
+		Vector3 rollDir = Vector3.Project(wheelRigidbody.angularVelocity, transform.right);
+		Vector3 forwardDir = Vector3.Project(wheelRigidbody.velocity, Camera.main.transform.forward);
+		wheelRigidbody.angularVelocity = rollDir;
+		//wheelRigidbody.velocity = forwardDir;
 
 	}
 
@@ -43,9 +48,10 @@ public class Roll : MonoBehaviour
 		Vector3 camRight = Camera.main.transform.right;
 		camRight.y = 0;
 		camRight = camRight.normalized;
-		//float difInRadians = Vector3.Angle();
+		float clamp = Mathf.Clamp01(45 / Vector3.Angle(transform.right, camRight));
+		Vector3 clampedCamRight = Vector3.Lerp(transform.right, camRight, clamp);
 		Quaternion upRot = Quaternion.FromToRotation(transform.right, camRight);
-		transform.rotation = Quaternion.Slerp(transform.rotation, upRot * transform.rotation, Time.deltaTime * 5);
+		transform.rotation = Quaternion.Slerp(transform.rotation, upRot * transform.rotation, Time.deltaTime * 10);
 		//transform.Rotate(Vector3.up * difInRadians, Space.World);
 		
 	}
