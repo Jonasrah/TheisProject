@@ -16,27 +16,18 @@ public class FollowCamera : MonoBehaviour
     {
         col = GetComponent<SphereCollider>();
         col.radius = distance / 2;
-<<<<<<< HEAD
-        groundLevel = target.transform.position.y;
         Screen.lockCursor = true;
-=======
->>>>>>> d2a8cce840341d7e3bd53e46e3b1fa6738f9f262
+
     }
 
-    void LateUpdate()
-    {
-        float offset = distance - counter;
+    void LateUpdate() {
+        float offset = distance - Mathf.Pow(counter, 2) / distance;
         Vector3 desiredPosition = target.transform.position - transform.forward * offset;
-<<<<<<< HEAD
         desiredPosition +=  transform.right * Input.GetAxis("Mouse X") * rotateSpeed;
-        float verticalFactor = Vector3.Dot(transform.up, Vector3.up);
+        float verticalFactor = 1 - counter / distance;
         desiredPosition += transform.up * Input.GetAxis("Mouse Y") * rotateSpeed * verticalFactor;
         float heightDif = desiredPosition.y - target.transform.position.y;
-=======
-        desiredPosition += transform.right * Input.GetAxis("Mouse X") * rotateSpeed;
-        desiredPosition += transform.up * Input.GetAxis("Mouse Y") * rotateSpeed;
->>>>>>> d2a8cce840341d7e3bd53e46e3b1fa6738f9f262
-        if (offset - Mathf.Abs(desiredPosition.y) < tolerance) return;
+        //if (offset - Mathf.Abs(desiredPosition.y) < 2) return;
         transform.position = desiredPosition;
         transform.LookAt(target.transform);
     }

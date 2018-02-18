@@ -8,6 +8,7 @@ public class Roll : MonoBehaviour
 	private float scrollDelta;
 
 	private Rigidbody wheelRigidbody;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -28,14 +29,13 @@ public class Roll : MonoBehaviour
 		{
 			
 			wheelRigidbody.AddTorque(transform.right * scroll, ForceMode.VelocityChange);
-			Vector3 targVel = Vector3.Cross(transform.right, Vector3.up) * wheelRigidbody.velocity.magnitude;
-			wheelRigidbody.velocity = Vector3.Lerp(wheelRigidbody.velocity, targVel, Time.fixedDeltaTime * 10);
+			Vector3 targVel = Vector3.Cross(transform.right, Vector3.up) * wheelRigidbody.velocity.magnitude + Physics.gravity;
+			//wheelRigidbody.velocity = Vector3.Lerp(wheelRigidbody.velocity, targVel, Time.fixedDeltaTime * 10);
 			scrollDelta = 0;
 		}
 		else
 		{
-			wheelRigidbody.angularVelocity = Vector3.Lerp(
-									wheelRigidbody.angularVelocity, Vector3.zero, Time.fixedDeltaTime * 50);
+			//wheelRigidbody.angularVelocity = Vector3.Lerp(wheelRigidbody.angularVelocity, Vector3.zero, Time.fixedDeltaTime * 50);
 		}
 		Vector3 rollDir = Vector3.Project(wheelRigidbody.angularVelocity, transform.right);
 		Vector3 forwardDir = Vector3.Project(wheelRigidbody.velocity, Camera.main.transform.forward);
@@ -55,4 +55,5 @@ public class Roll : MonoBehaviour
 		//transform.Rotate(Vector3.up * difInRadians, Space.World);
 		
 	}
+
 }
