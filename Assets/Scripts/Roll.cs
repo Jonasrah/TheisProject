@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ public class Roll : MonoBehaviour
 	private float scrollDelta;
 
 	private Rigidbody wheelRigidbody;
+	private bool grounded;
+	private Vector3 normal = Vector3.up;
+	[SerializeField] private float maxRollSpeed = 25;
 
 	// Use this for initialization
 	void Start ()
@@ -22,38 +26,62 @@ public class Roll : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-
-		float scroll = scrollDelta * rollSpeed;
+		float currentRollingSpeed = wheelRigidbody.angularVelocity.magnitude;
+		Vector3 forward = Vector3.Cross(transform.right, Vector3.up);
+		Vector3 targVel = Vector3.Cross(wheelRigidbody.angularVelocity.normalized, normal);
+		targVel *= currentRollingSpeed;
+		targVel.y += wheelRigidbody.velocity.y;
+		Vector3 rollDir = Vector3.Project(wheelRigidbody.angularVelocity, transform.right);
 		
-		if (Mathf.Abs(scroll) > 0f)
-		{
-			
-			wheelRigidbody.AddTorque(transform.right * scroll, ForceMode.VelocityChange);
-			Vector3 targVel = Vector3.Cross(transform.right, Vector3.up) * wheelRigidbody.velocity.magnitude + Physics.gravity;
-			//wheelRigidbody.velocity = Vector3.Lerp(wheelRigidbody.velocity, targVel, Time.fixedDeltaTime * 10);
-			scrollDelta = 0;
+
+		if (grounded) wheelRigidbody.velocity = targVel;
+		wheelRigidbody.angularVelocity = rollDir;
+		
+		Debug.DrawRay(transform.position, forward * wheelRigidbody.velocity.magnitude, Color.red, 0.1f);
+		Debug.DrawRay(transform.position, wheelRigidbody.velocity, Color.green, 0.1f);
+
+		if (Mathf.Abs(scrollDelta) > 0f) {
+			if (currentRollingSpeed < maxRollSpeed)
+			{
+				float scrollForce = scrollDelta * rollSpeed;
+				wheelRigidbody.AddTorque(transform.right * scrollForce, ForceMode.VelocityChange);
+				scrollDelta = 0;
+			}
 		}
 		else
 		{
-			//wheelRigidbody.angularVelocity = Vector3.Lerp(wheelRigidbody.angularVelocity, Vector3.zero, Time.fixedDeltaTime * 50);
+			/* Scroll wheel too unpredictable for this
+			wheelRigidbody.angularVelocity = Vector3.zero;
+			*/
 		}
-		Vector3 rollDir = Vector3.Project(wheelRigidbody.angularVelocity, transform.right);
-		Vector3 forwardDir = Vector3.Project(wheelRigidbody.velocity, Camera.main.transform.forward);
-		wheelRigidbody.angularVelocity = rollDir;
-		//wheelRigidbody.velocity = forwardDir;
-
+		
+		RotateToCameraDirection();
+		
+		if (grounded) return;
+		wheelRigidbody.AddForce(Vector3.down * 10, ForceMode.Acceleration);
 	}
 
-	private void LateUpdate() {
+	private void RotateToCameraDirection() {
 		Vector3 camRight = Camera.main.transform.right;
 		camRight.y = 0;
 		camRight = camRight.normalized;
-		float clamp = Mathf.Clamp01(45 / Vector3.Angle(transform.right, camRight));
-		Vector3 clampedCamRight = Vector3.Lerp(transform.right, camRight, clamp);
+		
 		Quaternion upRot = Quaternion.FromToRotation(transform.right, camRight);
-		transform.rotation = Quaternion.Slerp(transform.rotation, upRot * transform.rotation, Time.deltaTime * 10);
-		//transform.Rotate(Vector3.up * difInRadians, Space.World);
+		transform.rotation = Quaternion.Slerp(transform.rotation, upRot * transform.rotation, Time.fixedDeltaTime * 10);
 		
 	}
 
+	private void OnCollisionStay(Collision other)
+	{
+		grounded = true;
+
+		normal = other.contacts[0].normal;
+				
+		Debug.DrawRay(other.contacts[0].point, other.contacts[0].normal * 3, Color.magenta);
+	}
+	private void OnCollisionExit(Collision other)
+	{
+		grounded = false;
+		normal = Vector3.up;
+	}
 }
