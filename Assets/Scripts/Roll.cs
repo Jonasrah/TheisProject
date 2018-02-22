@@ -14,7 +14,7 @@ public class Roll : MonoBehaviour
 	[SerializeField] private float maxRollSpeed = 25;
 
 	// Use this for initialization
-	void Start ()
+	private void Start ()
 	{
 		wheelRigidbody = GetComponent<Rigidbody>();
 		wheelRigidbody.maxAngularVelocity = 50;
@@ -41,12 +41,10 @@ public class Roll : MonoBehaviour
 		Debug.DrawRay(transform.position, wheelRigidbody.velocity, Color.green, 0.1f);
 
 		if (Mathf.Abs(scrollDelta) > 0f) {
-			if (currentRollingSpeed < maxRollSpeed)
-			{
-				float scrollForce = scrollDelta * rollSpeed;
-				wheelRigidbody.AddTorque(transform.right * scrollForce, ForceMode.VelocityChange);
-				scrollDelta = 0;
-			}
+			float scrollForce = scrollDelta * rollSpeed;
+			wheelRigidbody.angularVelocity = Vector3.ClampMagnitude(wheelRigidbody.angularVelocity, maxRollSpeed);
+			wheelRigidbody.AddTorque(transform.right * scrollForce, ForceMode.VelocityChange);
+			scrollDelta = 0;
 		}
 		else
 		{
@@ -75,9 +73,11 @@ public class Roll : MonoBehaviour
 	{
 		grounded = true;
 
-		normal = other.contacts[0].normal;
+		
 				
 		Debug.DrawRay(other.contacts[0].point, other.contacts[0].normal * 3, Color.magenta);
+		
+		if (other.collider.gameObject.layer == LayerMask.NameToLayer("Ground")) normal = other.contacts[0].normal;
 	}
 	private void OnCollisionExit(Collision other)
 	{
