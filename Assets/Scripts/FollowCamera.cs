@@ -11,6 +11,8 @@ public class FollowCamera : MonoBehaviour
     private float counter;
     private SphereCollider col;
     private float tolerance = 0.2f;
+    private float verticalAmount;
+    private Vector3 clippingPoint;
 
     private void Start()
     {
@@ -22,22 +24,23 @@ public class FollowCamera : MonoBehaviour
 
     void LateUpdate() {
         float offset = distance - Mathf.Pow(counter, 2) / distance;
+        verticalAmount += Input.GetAxis("Mouse Y");
         Vector3 desiredPosition = target.transform.position - transform.forward * offset;
         desiredPosition +=  transform.right * Input.GetAxis("Mouse X") * rotateSpeed;
         float verticalFactor = 1 - counter / distance;
         desiredPosition += transform.up * Input.GetAxis("Mouse Y") * rotateSpeed * verticalFactor;
-        float heightDif = desiredPosition.y - target.transform.position.y;
-        //if (offset - Mathf.Abs(desiredPosition.y) < 2) return;
+        if (desiredPosition.y < clippingPoint.y + tolerance || desiredPosition.y - target.transform.position.y > 4.3f) return;
         transform.position = desiredPosition;
         transform.LookAt(target.transform);
+        
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Vector3 point = other.ClosestPoint(transform.position);
-        float distanceToPoint = Mathf.Max(Vector3.Distance(transform.position, point), distance / 10);
+        clippingPoint = other.ClosestPoint(transform.position);
+        float distanceToPoint = Mathf.Max(Vector3.Distance(transform.position, clippingPoint), distance / 10);
         counter = (col.radius - distanceToPoint) * 2;
-        Debug.DrawRay(point, Vector3.up * counter, Color.red);
+        Debug.DrawRay(clippingPoint, Vector3.up * counter, Color.red);
     }
 
     private void OnTriggerExit(Collider other)

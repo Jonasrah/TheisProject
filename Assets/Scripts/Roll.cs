@@ -27,14 +27,15 @@ public class Roll : MonoBehaviour
 	private void FixedUpdate()
 	{
 		float currentRollingSpeed = wheelRigidbody.angularVelocity.magnitude;
-		Vector3 forward = Vector3.Cross(transform.right, Vector3.up);
-		Vector3 targVel = Vector3.Cross(wheelRigidbody.angularVelocity.normalized, normal);
-		targVel *= currentRollingSpeed;
+		Vector3 forward = Vector3.Cross(transform.right, normal);
+		
+		Vector3 targVel = forward * currentRollingSpeed;
 		targVel.y += wheelRigidbody.velocity.y;
+		
 		Vector3 rollDir = Vector3.Project(wheelRigidbody.angularVelocity, transform.right);
 		
 
-		if (grounded) wheelRigidbody.velocity = targVel;
+		if (grounded) //wheelRigidbody.velocity = targVel;
 		wheelRigidbody.angularVelocity = rollDir;
 		
 		Debug.DrawRay(transform.position, forward * wheelRigidbody.velocity.magnitude, Color.red, 0.1f);
@@ -52,6 +53,7 @@ public class Roll : MonoBehaviour
 			wheelRigidbody.angularVelocity = Vector3.zero;
 			*/
 		}
+		
 		
 		RotateToCameraDirection();
 		
@@ -73,11 +75,12 @@ public class Roll : MonoBehaviour
 	{
 		grounded = true;
 
+		if (other.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+		{
+			normal = other.contacts[0].normal;
+		}
 		
-				
-		Debug.DrawRay(other.contacts[0].point, other.contacts[0].normal * 3, Color.magenta);
-		
-		if (other.collider.gameObject.layer == LayerMask.NameToLayer("Ground")) normal = other.contacts[0].normal;
+		Debug.DrawRay(other.contacts[0].point, normal * 3, Color.magenta);
 	}
 	private void OnCollisionExit(Collision other)
 	{
