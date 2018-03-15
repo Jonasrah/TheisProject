@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a57ed01b894d7bc478cf5afbaddfa7c5
-timeCreated: 1520175232
+timeCreated: 1521146552
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -41,7 +41,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Large_Rock_X
       value:
-        scalar[0]: 10
+        scalar[0]: 24.7
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -57,7 +57,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Rock_Height_Blend
       value:
-        scalar[0]: 0.65
+        scalar[0]: 0.535
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -89,7 +89,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Moss_Intensity
       value:
-        scalar[0]: 0
+        scalar[0]: 0.459
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -160,7 +160,7 @@ SubstanceImporter:
       - _Metallic: 0
       - _Mode: 0
       - _OcclusionStrength: 1
-      - _Parallax: 0.08
+      - _Parallax: 0.02
       - _SmoothnessTextureChannel: 0
       - _SpecularHighlights: 1
       - _SrcBlend: 1

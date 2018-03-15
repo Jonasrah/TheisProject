@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 61f1ead9f4808eb4f86444c16e8b454c
-timeCreated: 1520280773
+timeCreated: 1521141979
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -62,7 +62,7 @@ SubstanceImporter:
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - _OcclusionMap:
-          texture: {instanceID: 0}
+          texture: {fileID: -1092358179, guid: e86902293ba864f4fb5f4214536bc4b0, type: 3}
           scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - _ParallaxMap:
@@ -120,6 +120,9 @@ SubstanceImporter:
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
       baseUID: 3120275399
+    - shaderProp: _OcclusionMap
+      material: {fileID: 1590670492, guid: e86902293ba864f4fb5f4214536bc4b0, type: 3}
+      baseUID: 1790191721
     - shaderProp: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 3180639542
