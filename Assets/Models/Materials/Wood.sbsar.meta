@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e8cc0af20ef1e9247a8a67d524047ac7
-timeCreated: 1521487739
+timeCreated: 1521575955
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -11,13 +11,14 @@ SubstanceImporter:
     prototypeName: Wood
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+    shaderKeywords: _GLOSSYREFLECTIONS_OFF _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+      _SPECULARHIGHLIGHTS_OFF
     renderQueue: -1
     lightmapFlags: 4
     inputs:
     - name: $randomseed
       value:
-        scalar[0]: 0
+        scalar[0]: 6005
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -28,7 +29,7 @@ SubstanceImporter:
       offset: {x: 0, y: 0}
       scale: {x: 1, y: 1}
       generateMipmaps: 1
-      generateAllOutputs: 1
+      generateAllOutputs: 0
       animationUpdateRate: 42
     materialProperties:
       serializedVersion: 3
@@ -76,19 +77,19 @@ SubstanceImporter:
       - _DstBlend: 0
       - _GlossMapScale: 1
       - _Glossiness: 0.5
-      - _GlossyReflections: 1
+      - _GlossyReflections: 0
       - _Metallic: 0
       - _Mode: 0
       - _OcclusionStrength: 1
       - _Parallax: 0.02
       - _SmoothnessTextureChannel: 0
-      - _SpecularHighlights: 1
+      - _SpecularHighlights: 0
       - _SrcBlend: 1
       - _UVSec: 0
       - _ZWrite: 1
       colors:
       - _Color: {r: 1, g: 1, b: 1, a: 1}
-      - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+      - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     textureParameters:
     - name: Wood_basecolor
       alphaSource: 6
@@ -125,6 +126,11 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Wood_emmisive
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp: _MainTex
       material: {instanceID: 0}
@@ -132,15 +138,18 @@ SubstanceImporter:
     - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 1561983170
+    - shaderProp: _EmissionMap
+      material: {instanceID: 0}
+      baseUID: 1527179199
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
       baseUID: 1561983174
-    - shaderProp: _ParallaxMap
-      material: {instanceID: 0}
-      baseUID: 1500959287
     - shaderProp: _OcclusionMap
       material: {instanceID: 0}
       baseUID: 1526872094
+    - shaderProp: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 1500959287
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
