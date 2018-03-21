@@ -15,7 +15,7 @@ public class FollowCamera : MonoBehaviour
 
     private void Start()
     {
-        Screen.lockCursor = true;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
 
