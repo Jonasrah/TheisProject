@@ -1,28 +1,20 @@
 fileFormatVersion: 2
-guid: e86902293ba864f4fb5f4214536bc4b0
-timeCreated: 1521579450
+guid: 8e1d160fb6a348f4ca376151068f08d6
+timeCreated: 1521636208
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
   serializedVersion: 5
   materialInstances:
   - serializedVersion: 16
-    name: Slab
-    prototypeName: Slab
+    name: WoodLight
+    prototypeName: WoodLight
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _GLOSSYREFLECTIONS_OFF _NORMALMAP _PARALLAXMAP _SPECULARHIGHLIGHTS_OFF
+    shaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
-    lightmapFlags: 4
+    lightmapFlags: 1
     inputs:
-    - name: disorder
-      value:
-        scalar[0]: 0
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-        stringvalue: 
     - name: $outputsize
       value:
         scalar[0]: 8
@@ -33,7 +25,7 @@ SubstanceImporter:
         stringvalue: 
     - name: $randomseed
       value:
-        scalar[0]: 8067
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -45,7 +37,7 @@ SubstanceImporter:
       scale: {x: 1, y: 1}
       generateMipmaps: 1
       generateAllOutputs: 0
-      animationUpdateRate: 42
+      animationUpdateRate: 0
     materialProperties:
       serializedVersion: 3
       texEnvs:
@@ -91,37 +83,47 @@ SubstanceImporter:
       - _DetailNormalMapScale: 1
       - _DstBlend: 0
       - _GlossMapScale: 1
-      - _Glossiness: 0
-      - _GlossyReflections: 0
+      - _Glossiness: 0.5
+      - _GlossyReflections: 1
       - _Metallic: 0
       - _Mode: 0
       - _OcclusionStrength: 1
-      - _Parallax: 0.0215
+      - _Parallax: 0.02
       - _SmoothnessTextureChannel: 0
-      - _SpecularHighlights: 0
+      - _SpecularHighlights: 1
       - _SrcBlend: 1
       - _UVSec: 0
       - _ZWrite: 1
       colors:
       - _Color: {r: 1, g: 1, b: 1, a: 1}
-      - _EmissionColor: {r: 0.609, g: 0.609, b: 0.609, a: 1}
+      - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     textureParameters:
-    - name: Slab_basecolor
+    - name: WoodLight_basecolor
       alphaSource: 6
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: Slab_normal
+    - name: WoodLight_normal
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: Slab_height
+    - name: WoodLight_metallic
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: WoodLight_height
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: Slab_ambient_occlussion
+    - name: WoodLight_Ambient
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: WoodLight_emmisive
       alphaSource: 0
       filterMode: 1
       aniso: 1
@@ -129,24 +131,27 @@ SubstanceImporter:
     textureAssignments:
     - shaderProp: _MainTex
       material: {instanceID: 0}
-      baseUID: 2715164450
+      baseUID: 3775731798
     - shaderProp: _BumpMap
       material: {instanceID: 0}
-      baseUID: 2715163014
+      baseUID: 3775731796
     - shaderProp: _EmissionMap
       material: {instanceID: 0}
-      baseUID: 2715164450
+      baseUID: 3877084561
+    - shaderProp: _MetallicGlossMap
+      material: {instanceID: 0}
+      baseUID: 3775731792
     - shaderProp: _OcclusionMap
       material: {instanceID: 0}
-      baseUID: 2715162956
+      baseUID: 3877034120
     - shaderProp: _ParallaxMap
       material: {instanceID: 0}
-      baseUID: 2715162946
+      baseUID: 3848417953
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
-      textureWidth: 2048
-      textureHeight: 2048
+      textureWidth: 512
+      textureHeight: 512
       textureFormat: 0
       loadingBehavior: 1
   deletedPrototypes: []

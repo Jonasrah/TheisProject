@@ -11,7 +11,7 @@ SubstanceImporter:
     prototypeName: WoodAlt
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _EMISSION _NORMALMAP
+    shaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 1
     inputs:
@@ -19,6 +19,14 @@ SubstanceImporter:
       value:
         scalar[0]: 0
         scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
+    - name: $outputsize
+      value:
+        scalar[0]: 8
+        scalar[1]: 8
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
@@ -79,7 +87,7 @@ SubstanceImporter:
       - _GlossyReflections: 1
       - _Metallic: 0
       - _Mode: 0
-      - _OcclusionStrength: 1
+      - _OcclusionStrength: 0.22
       - _Parallax: 0.02
       - _SmoothnessTextureChannel: 0
       - _SpecularHighlights: 1
@@ -88,7 +96,7 @@ SubstanceImporter:
       - _ZWrite: 1
       colors:
       - _Color: {r: 1, g: 1, b: 1, a: 1}
-      - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+      - _EmissionColor: {r: 0.801, g: 0.801, b: 0.801, a: 1}
     textureParameters:
     - name: WoodAlt_basecolor
       alphaSource: 6
@@ -144,7 +152,7 @@ SubstanceImporter:
       buildTarget: 
       textureWidth: 512
       textureHeight: 512
-      textureFormat: 0
+      textureFormat: 1
       loadingBehavior: 1
   deletedPrototypes: []
   userData: 
