@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.51
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: e32cbd33f6e514046b3aec98141f109b, type: 2}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 252212762}
-  m_IndirectSpecularColor: {r: 0.8275198, g: 0.8112339, b: 0.7780496, a: 1}
+  m_IndirectSpecularColor: {r: 0.82751095, g: 0.8112204, b: 0.7780416, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -238,9 +238,8 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: afc7f7d816b6150479e9012a7f28e4a2, type: 2}
-  - {fileID: 2122233536, guid: e8cc0af20ef1e9247a8a67d524047ac7, type: 3}
-  - {fileID: 2122233536, guid: e8cc0af20ef1e9247a8a67d524047ac7, type: 3}
+  - {fileID: 2081908745, guid: 8e1d160fb6a348f4ca376151068f08d6, type: 3}
+  - {fileID: 997457983, guid: c5e6e80121d7065449d7394ccb223202, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -566,7 +565,7 @@ MonoBehaviour:
       localPivot: {x: 19, y: -18.703804}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: -2057104371, guid: e86902293ba864f4fb5f4214536bc4b0, type: 3}
+    _mat: {fileID: 997457983, guid: c5e6e80121d7065449d7394ccb223202, type: 3}
     manualUV: 0
     elementGroup: 0
     textureGroup: 6
@@ -595,7 +594,7 @@ MonoBehaviour:
       localPivot: {x: 19, y: -18.703804}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: -2057104371, guid: e86902293ba864f4fb5f4214536bc4b0, type: 3}
+    _mat: {fileID: 997457983, guid: c5e6e80121d7065449d7394ccb223202, type: 3}
     manualUV: 0
     elementGroup: 0
     textureGroup: 6
@@ -624,7 +623,7 @@ MonoBehaviour:
       localPivot: {x: 19, y: -18.703804}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: -2057104371, guid: e86902293ba864f4fb5f4214536bc4b0, type: 3}
+    _mat: {fileID: 997457983, guid: c5e6e80121d7065449d7394ccb223202, type: 3}
     manualUV: 0
     elementGroup: 0
     textureGroup: 6
@@ -653,7 +652,7 @@ MonoBehaviour:
       localPivot: {x: 19, y: -18.703804}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: -2057104371, guid: e86902293ba864f4fb5f4214536bc4b0, type: 3}
+    _mat: {fileID: 997457983, guid: c5e6e80121d7065449d7394ccb223202, type: 3}
     manualUV: 0
     elementGroup: 0
     textureGroup: 6
@@ -1106,9 +1105,41 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedFaces: 07000000060000000500000004000000
+  m_SelectedEdges:
+  - x: 28
+    y: 29
+  - x: 29
+    y: 30
+  - x: 31
+    y: 28
+  - x: 30
+    y: 31
+  - x: 25
+    y: 26
+  - x: 26
+    y: 27
+  - x: 24
+    y: 25
+  - x: 27
+    y: 24
+  - x: 22
+    y: 23
+  - x: 23
+    y: 20
+  - x: 21
+    y: 22
+  - x: 20
+    y: 21
+  - x: 18
+    y: 19
+  - x: 19
+    y: 16
+  - x: 17
+    y: 18
+  - x: 16
+    y: 17
+  m_selectedTriangles: 1c0000001d0000001e0000001f0000001c0000001e000000190000001a0000001b00000018000000190000001b000000160000001700000014000000150000001600000014000000120000001300000010000000110000001200000010000000
 --- !u!33 &946062597
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1131,7 +1162,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 27558164, guid: 0f028716bf942814194923494985419f, type: 3}
-  - {fileID: -2057104371, guid: e86902293ba864f4fb5f4214536bc4b0, type: 3}
+  - {fileID: 997457983, guid: c5e6e80121d7065449d7394ccb223202, type: 3}
   - {fileID: 2122233536, guid: e8cc0af20ef1e9247a8a67d524047ac7, type: 3}
   - {fileID: 2081908745, guid: 8e1d160fb6a348f4ca376151068f08d6, type: 3}
   - {fileID: -213042187, guid: 11615d8aa2d5af64ba3649013eedcafa, type: 3}
@@ -1204,16 +1235,16 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.44
-  m_Range: 25
+  m_Color: {r: 1, g: 0.759, b: 0.528, a: 1}
+  m_Intensity: 4.07
+  m_Range: 19.48
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.627
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -1238,7 +1269,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1002574112}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.03, y: 3.32, z: 5.28}
+  m_LocalPosition: {x: -13.74, y: 4.17, z: -1.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1249,7 +1280,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh14022
+  m_Name: pb_Mesh12286
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

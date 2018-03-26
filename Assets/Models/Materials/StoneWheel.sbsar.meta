@@ -1,33 +1,48 @@
 fileFormatVersion: 2
-guid: e8cc0af20ef1e9247a8a67d524047ac7
-timeCreated: 1521576853
+guid: c5e6e80121d7065449d7394ccb223202
+timeCreated: 1522069107
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
   serializedVersion: 5
   materialInstances:
   - serializedVersion: 16
-    name: Wood
-    prototypeName: Wood
+    name: StoneWheel
+    prototypeName: StoneWheel
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _GLOSSYREFLECTIONS_OFF _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
-      _SPECULARHIGHLIGHTS_OFF
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 4
     inputs:
+    - name: $outputsize
+      value:
+        scalar[0]: 8
+        scalar[1]: 8
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+        stringvalue: 
     - name: $randomseed
       value:
-        scalar[0]: 6005
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
         stringvalue: 
+    - name: Output_Color
+      value:
+        scalar[0]: 0.384314
+        scalar[1]: 0.384314
+        scalar[2]: 0.384314
+        scalar[3]: 1
+        texture: {instanceID: 0}
+        stringvalue: 
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 0.5, y: 0.5}
+      scale: {x: 1, y: 1}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 42
@@ -36,7 +51,7 @@ SubstanceImporter:
       texEnvs:
       - _BumpMap:
           texture: {instanceID: 0}
-          scale: {x: 0.5, y: 0.5}
+          scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - _DetailAlbedoMap:
           texture: {instanceID: 0}
@@ -52,81 +67,61 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _EmissionMap:
           texture: {instanceID: 0}
-          scale: {x: 0.5, y: 0.5}
+          scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - _MainTex:
           texture: {instanceID: 0}
-          scale: {x: 0.5, y: 0.5}
+          scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - _MetallicGlossMap:
           texture: {instanceID: 0}
-          scale: {x: 0.5, y: 0.5}
+          scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - _OcclusionMap:
           texture: {instanceID: 0}
-          scale: {x: 0.5, y: 0.5}
+          scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - _ParallaxMap:
           texture: {instanceID: 0}
-          scale: {x: 0.5, y: 0.5}
+          scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       floats:
-      - _BumpScale: 1
+      - _BumpScale: 0
       - _Cutoff: 0.5
       - _DetailNormalMapScale: 1
       - _DstBlend: 0
       - _GlossMapScale: 1
-      - _Glossiness: 0
-      - _GlossyReflections: 0
+      - _Glossiness: 0.5
+      - _GlossyReflections: 1
       - _Metallic: 0
       - _Mode: 0
       - _OcclusionStrength: 1
-      - _Parallax: 0.02
+      - _Parallax: 0.005
       - _SmoothnessTextureChannel: 0
-      - _SpecularHighlights: 0
+      - _SpecularHighlights: 1
       - _SrcBlend: 1
       - _UVSec: 0
       - _ZWrite: 1
       colors:
       - _Color: {r: 1, g: 1, b: 1, a: 1}
-      - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+      - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     textureParameters:
-    - name: Wood_basecolor
+    - name: StoneWheel_basecolor
       alphaSource: 6
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: Wood_normal
+    - name: StoneWheel_normal
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: Wood_metallic
+    - name: StoneWheel_metallic
       alphaSource: 7
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: Wood_height
-      alphaSource: 0
-      filterMode: 1
-      aniso: 1
-      wrapMode: 0
-    - name: Wood_Ambient
-      alphaSource: 0
-      filterMode: 1
-      aniso: 1
-      wrapMode: 0
-    - name: Wood_roughness
-      alphaSource: 0
-      filterMode: 1
-      aniso: 1
-      wrapMode: 0
-    - name: Wood_output
-      alphaSource: 0
-      filterMode: 1
-      aniso: 1
-      wrapMode: 0
-    - name: Wood_emmisive
+    - name: StoneWheel_height
       alphaSource: 0
       filterMode: 1
       aniso: 1
@@ -134,22 +129,16 @@ SubstanceImporter:
     textureAssignments:
     - shaderProp: _MainTex
       material: {instanceID: 0}
-      baseUID: 1561983168
+      baseUID: 1603630688
     - shaderProp: _BumpMap
       material: {instanceID: 0}
-      baseUID: 1561983170
+      baseUID: 1603630690
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 1561983174
+      baseUID: 1603630694
     - shaderProp: _ParallaxMap
       material: {instanceID: 0}
-      baseUID: 1500959287
-    - shaderProp: _OcclusionMap
-      material: {instanceID: 0}
-      baseUID: 1526872094
-    - shaderProp: _EmissionMap
-      material: {instanceID: 0}
-      baseUID: 1527179199
+      baseUID: 1543134359
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
