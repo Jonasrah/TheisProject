@@ -12,6 +12,7 @@ public class Roll : MonoBehaviour
 	private bool grounded;
 	private Vector3 normal = Vector3.up;
 	[SerializeField] private float maxRollSpeed = 25;
+	private bool lookInCamDir;
 
 	// Use this for initialization
 	private void Start ()
@@ -62,6 +63,7 @@ public class Roll : MonoBehaviour
 	}
 
 	private void RotateToCameraDirection() {
+		if (!lookInCamDir) return;
 		Vector3 camRight = Camera.main.transform.right;
 		camRight.y = 0;
 		camRight = camRight.normalized;
@@ -78,13 +80,27 @@ public class Roll : MonoBehaviour
 		if (other.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
 		{
 			normal = other.contacts[0].normal;
+			Debug.DrawRay(other.contacts[0].point, normal * 3, Color.magenta);
+			return;
 		}
 		
-		Debug.DrawRay(other.contacts[0].point, normal * 3, Color.magenta);
+		if (other.collider.attachedRigidbody == null) {
+			lookInCamDir = false;
+		}
+		else if (other.collider.attachedRigidbody.isKinematic) {
+			lookInCamDir = false;
+		}
+		
 	}
 	private void OnCollisionExit(Collision other)
 	{
 		grounded = false;
 		normal = Vector3.up;
+		if (other.collider.attachedRigidbody == null) {
+			lookInCamDir = true;
+		}
+		else if (other.collider.attachedRigidbody.isKinematic) {
+			lookInCamDir = true;
+		}
 	}
 }

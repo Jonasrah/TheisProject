@@ -21,6 +21,6 @@ public class FlickerLight : MonoBehaviour
 	void Update ()
 	{
 		float targetIntensity = Random.Range(baseLine - variation, baseLine + variation);
-		_light.intensity = Mathf.Lerp(_light.intensity, targetIntensity, Time.deltaTime / 2);
+		_light.intensity = Mathf.Lerp(_light.intensity, targetIntensity, Time.deltaTime);
 	}
 }
