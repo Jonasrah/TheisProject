@@ -11,7 +11,7 @@ SubstanceImporter:
     prototypeName: WoodLightWear
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 4
     inputs:
@@ -25,7 +25,7 @@ SubstanceImporter:
         stringvalue: 
     - name: $randomseed
       value:
-        scalar[0]: 0
+        scalar[0]: 4146
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -135,18 +135,18 @@ SubstanceImporter:
     - shaderProp: _BumpMap
       material: {instanceID: 0}
       baseUID: 1597541216
-    - shaderProp: _EmissionMap
-      material: {instanceID: 0}
-      baseUID: 1495404197
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
       baseUID: 1597541220
-    - shaderProp: _OcclusionMap
-      material: {instanceID: 0}
-      baseUID: 1495485372
     - shaderProp: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 1532469653
+    - shaderProp: _OcclusionMap
+      material: {instanceID: 0}
+      baseUID: 1495485372
+    - shaderProp: _EmissionMap
+      material: {instanceID: 0}
+      baseUID: 1495404197
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
