@@ -1,14 +1,14 @@
 fileFormatVersion: 2
 guid: e86902293ba864f4fb5f4214536bc4b0
-timeCreated: 1522150148
+timeCreated: 1522327069
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
   serializedVersion: 5
   materialInstances:
   - serializedVersion: 16
-    name: HoleRoom
-    prototypeName: HoleRoom
+    name: StoneTiles
+    prototypeName: StoneTiles
     shaderName: 
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: _METALLICGLOSSMAP _PARALLAXMAP
@@ -33,7 +33,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Range
       value:
-        scalar[0]: 0.249
+        scalar[0]: 0.2
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -41,7 +41,7 @@ SubstanceImporter:
         stringvalue: 
     - name: Position
       value:
-        scalar[0]: 0.297
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -50,7 +50,7 @@ SubstanceImporter:
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 5, y: 5}
+      scale: {x: 4, y: 4}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 42
@@ -75,23 +75,23 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _EmissionMap:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 5}
+          scale: {x: 4, y: 4}
           offset: {x: 0, y: 0}
       - _MainTex:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 5}
+          scale: {x: 4, y: 4}
           offset: {x: 0, y: 0}
       - _MetallicGlossMap:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 5}
+          scale: {x: 4, y: 4}
           offset: {x: 0, y: 0}
       - _OcclusionMap:
           texture: {instanceID: 0}
-          scale: {x: 10, y: 10}
+          scale: {x: 1, y: 1}
           offset: {x: 0, y: 0}
       - _ParallaxMap:
           texture: {instanceID: 0}
-          scale: {x: 5, y: 5}
+          scale: {x: 4, y: 4}
           offset: {x: 0, y: 0}
       floats:
       - _BumpScale: 1
@@ -114,17 +114,17 @@ SubstanceImporter:
       - _Color: {r: 1, g: 1, b: 1, a: 1}
       - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     textureParameters:
-    - name: HoleRoom_basecolor
+    - name: StoneTiles_basecolor
       alphaSource: 6
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: HoleRoom_metallic
+    - name: StoneTiles_metallic
       alphaSource: 7
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: HoleRoom_height
+    - name: StoneTiles_height
       alphaSource: 0
       filterMode: 1
       aniso: 1
@@ -132,13 +132,13 @@ SubstanceImporter:
     textureAssignments:
     - shaderProp: _MainTex
       material: {instanceID: 0}
-      baseUID: 2974468793
+      baseUID: 575692207
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 3039158344
+      baseUID: 575692201
     - shaderProp: _ParallaxMap
       material: {instanceID: 0}
-      baseUID: 2974468793
+      baseUID: 641693528
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
