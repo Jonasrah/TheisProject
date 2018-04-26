@@ -12,7 +12,7 @@ public class Roll : MonoBehaviour
 	private bool grounded;
 	private Vector3 normal = Vector3.up;
 	[SerializeField] private float maxRollSpeed = 25;
-	private bool lookInCamDir;
+	private bool lookInCamDir = true;
 
 	// Use this for initialization
 	private void Start ()
