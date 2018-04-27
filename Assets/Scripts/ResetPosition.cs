@@ -27,5 +27,6 @@ public class ResetPosition : MonoBehaviour {
 
 	void AllocatePosition () {
 		player.position = spawn.position;
+		player.rotation = spawn.rotation;
 	}
 }

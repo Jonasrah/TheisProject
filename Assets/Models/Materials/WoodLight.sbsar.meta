@@ -122,15 +122,15 @@ SubstanceImporter:
     - shaderProp: _MainTex
       material: {instanceID: 0}
       baseUID: 3775731798
-    - shaderProp: _EmissionMap
-      material: {instanceID: 0}
-      baseUID: 3876014381
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
       baseUID: 3775731792
     - shaderProp: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 3848417953
+    - shaderProp: _EmissionMap
+      material: {instanceID: 0}
+      baseUID: 3876014381
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -269,15 +269,15 @@ SubstanceImporter:
     - shaderProp: _MainTex
       material: {instanceID: 0}
       baseUID: 3775731798
-    - shaderProp: _EmissionMap
-      material: {instanceID: 0}
-      baseUID: 3775731798
     - shaderProp: _MetallicGlossMap
       material: {instanceID: 0}
       baseUID: 3775731792
     - shaderProp: _ParallaxMap
       material: {instanceID: 0}
       baseUID: 3848417953
+    - shaderProp: _EmissionMap
+      material: {instanceID: 0}
+      baseUID: 3775731798
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
